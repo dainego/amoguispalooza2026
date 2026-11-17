@@ -1,0 +1,479 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #f3f4f6;
+  background: #10131d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 15% 5%, #30204c 0%, transparent 35%),
+    radial-gradient(ellipse at 90% 15%, #103d48 0%, transparent 30%),
+    #10131d;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 250px;
+  padding: 42px max(5%, calc((100% - 1250px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  background:
+    linear-gradient(110deg, rgba(9, 13, 27, .96), rgba(25, 24, 55, .82)),
+    linear-gradient(45deg, #f72585, #00d4c7);
+  border-bottom: 3px solid #00e5d4;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  right: 5%;
+  top: -190px;
+  border: 2px solid rgba(0, 229, 212, .25);
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px rgba(247, 37, 133, .08),
+              0 0 0 75px rgba(0, 229, 212, .06);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-tag, .section-label {
+  color: #00e5d4;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(48px, 8vw, 88px);
+  font-weight: 900;
+  line-height: .95;
+  letter-spacing: -2px;
+  margin: 14px 0 8px;
+  color: #fff;
+  text-shadow: 4px 4px 0 #f72585;
+}
+
+.hero h1 span {
+  color: #00e5d4;
+}
+
+.hero-subtitle {
+  font-weight: 800;
+  letter-spacing: 5px;
+  font-size: 13px;
+  color: #f9c74f;
+}
+
+.hero-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 25px;
+  margin-top: 25px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #e4e7eb;
+}
+
+.hero-decoration {
+  font-size: 100px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 20px #00e5d4);
+}
+
+.main-content {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 38px 24px;
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.welcome h2, .planner h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 34px;
+  margin: 8px 0;
+  text-transform: uppercase;
+}
+
+.welcome p {
+  color: #aeb7c8;
+  font-size: 14px;
+}
+
+.online-status {
+  color: #00e5a0;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.online-status span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #00e5a0;
+  border-radius: 50%;
+  margin-right: 7px;
+  box-shadow: 0 0 10px #00e5a0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.stat-card {
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-card span {
+  font-size: 23px;
+}
+
+.stat-card strong {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 36px;
+  color: #00e5d4;
+}
+
+.stat-card small {
+  color: #aeb7c8;
+  font-size: 12px;
+}
+
+.planner {
+  background: #191e2b;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 15px 45px rgba(0,0,0,.2);
+}
+
+.planner-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.add-button {
+  background: #00d4c7;
+  color: #10131d;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 18px;
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.add-button:hover {
+  background: #f9c74f;
+  transform: translateY(-2px);
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.toolbar input, .toolbar select {
+  background: #101521;
+  color: #f3f4f6;
+  border: 1px solid #343d50;
+  border-radius: 8px;
+  padding: 12px;
+  outline: none;
+}
+
+.toolbar input {
+  flex: 1;
+}
+
+.toolbar input:focus, .toolbar select:focus {
+  border-color: #00d4c7;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 750px;
+  font-size: 13px;
+}
+
+thead {
+  background: #252d3d;
+}
+
+th {
+  text-align: left;
+  color: #9eacc0;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 15px 12px;
+}
+
+td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #30394a;
+  color: #cbd2df;
+}
+
+tbody tr:hover {
+  background: rgba(0,229,212,.04);
+}
+
+.product-name {
+  color: white;
+  font-weight: 700;
+}
+
+.category {
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.category.comida {
+  color: #ffc857;
+  background: rgba(255,200,87,.12);
+}
+
+.category.bebidas {
+  color: #00d4c7;
+  background: rgba(0,212,199,.12);
+}
+
+.category.insumos {
+  color: #f48fb1;
+  background: rgba(244,143,177,.12);
+}
+
+.empty {
+  text-align: center;
+  color: #8994a7;
+  padding: 35px;
+}
+
+.table-footer {
+  color: #8994a7;
+  font-size: 11px;
+  padding-top: 16px;
+}
+
+footer {
+  text-align: center;
+  padding: 45px 10px 15px;
+}
+
+footer strong {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px;
+  color: #00d4c7;
+}
+
+footer p {
+  color: #f9c74f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+footer small {
+  color: #8994a7;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 35px 22px;
+    min-height: 220px;
+  }
+
+  .hero-decoration {
+    font-size: 65px;
+  }
+
+  .hero-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .main-content {
+    padding: 25px 14px;
+  }
+
+  .welcome, .planner-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px;
+  }
+
+  .planner {
+    padding: 16px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+}
+
+.product-form-container {
+  margin: 24px 0;
+  padding: 24px;
+  background: #111923;
+  border: 1px solid #263746;
+  border-radius: 12px;
+}
+
+.product-form-container h3 {
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+.product-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  color: #9eb1c1;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 10px 12px;
+  color: #ffffff;
+  background: #0b1119;
+  border: 1px solid #344657;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  outline: none;
+  border-color: #00d9ff;
+  box-shadow: 0 0 0 2px rgba(0, 217, 255, 0.12);
+}
+
+.form-field select option {
+  background: #111923;
+  color: #ffffff;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.cancel-button {
+  padding: 12px 18px;
+  color: #bdcbd6;
+  background: transparent;
+  border: 1px solid #526272;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+@media (max-width: 650px) {
+  .product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
